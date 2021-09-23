@@ -9,5 +9,5 @@ function consume() {
     p1_water.value = Math.round((parseFloat(p1_water.value) - parseFloat(p1_consumption.value)) * 10) / 10;
     p1_food.value = Math.round((parseFloat(p1_food.value) - parseFloat(p1_consumption.value)) * 10) / 10;
 
-    days_left.innerText = Math.floor(parseFloat(p1_water.value) / parseFloat(p1_consumption.value));
+    days_left.innerText = Math.floor(Math.min((parseFloat(p1_water.value) / parseFloat(p1_consumption.value)),(parseFloat(p1_food.value) / parseFloat(p1_consumption.value))));
 }
